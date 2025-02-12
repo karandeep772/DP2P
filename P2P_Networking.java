@@ -50,7 +50,17 @@ class Fixed_Distribution_Peers
         
         if (numberofpeers<=4 || Number_Of_Incompleted_Peers(Process_Completion, numberofpeers)<=4)
         {
-            //Directly Count Time taken
+            for(int i=0;i<numberofpeers;i++)
+            {
+                int Process_Complete_Percentage = Process_Completion[i];
+                CalculatingTimeTaken(Total_Time_Taken,numberofseeds_per_peer,max_size,max_speed_peers,Process_Complete_Percentage,i);
+                int Process_Complete_Percentage_Left = 100 - Process_Complete_Percentage;
+                CalculatingTimeTaken(Total_Time_Taken, numberofseeds_per_peer, max_size, max_speed_peers, Process_Complete_Percentage_Left, i);
+            } 
+        }
+
+        else
+        {
             
         }
 
